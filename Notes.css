@@ -1,0 +1,334 @@
+1. Introduction to CSS
+CSS (Cascading Style Sheets) is used to style and layout web pages. CSS saves a lot of work by controlling the layout of multiple web pages all at once.
+
+2. Adding CSS to HTML
+There are three ways to apply CSS to HTML:
+
+Inline CSS: Using the style attribute inside HTML elements.
+Internal CSS: Using a <style> element in the <head> section of an HTML document.
+External CSS: Using an external CSS file linked via the <link> element in the <head> section.
+
+Inline CSS
+<p style="color: blue;">This is a blue paragraph.</p>
+
+Internal CSS
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <p>This is a blue paragraph.</p>
+</body>
+</html>
+
+External CSS
+Create a file named styles.css:
+p {
+    color: blue;
+}
+
+Link the CSS file in your HTML:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <p>This is a blue paragraph.</p>
+</body>
+</html>
+
+3. CSS Syntax
+CSS is made up of selectors and declarations.
+selector {
+    property: value;
+}
+
+Selector: The HTML element you want to style.
+Property: The CSS property you want to change.
+Value: The value of the property.
+
+Example:
+p {
+    color: blue;
+    font-size: 16px;
+}
+
+
+4. CSS Selectors
+Selectors are used to select the HTML element you want to style.
+
+Element Selector: Selects HTML elements based on the element name.
+p {
+    color: blue;
+}
+
+ID Selector: Selects an element based on the id attribute. IDs are unique within a page, so the ID selector is used to select one unique element.
+#example {
+    color: blue;
+}
+
+Class Selector: Selects elements based on the class attribute.
+.example {
+    color: blue;
+}
+
+Universal Selector: Selects all elements.
+* {
+    color: blue;
+}
+
+Attribute Selector: Selects elements based on an attribute or attribute value.
+a[target="_blank"] {
+    color: red;
+}
+
+Group Selector: Selects multiple elements.
+h1, h2, h3 {
+    color: blue;
+}
+
+5. CSS Box Model
+All HTML elements can be considered as boxes. The CSS box model represents the structure of a box in terms of content, padding, border, and margin.
+
+Content: The actual content of the box.
+Padding: Clears an area around the content.
+Border: A border that goes around the padding and content.
+Margin: Clears an area outside the border.
+div {
+    width: 300px;
+    padding: 20px;
+    border: 5px solid black;
+    margin: 10px;
+}
+
+6. CSS Layout
+Display: Specifies the display behavior (the type of rendering box) of an element.
+.block {
+    display: block;
+}
+
+.inline {
+    display: inline;
+}
+
+.none {
+    display: none;
+}
+
+Position: Specifies the type of positioning method used for an element.
+.relative {
+    position: relative;
+    top: 10px;
+    left: 20px;
+}
+
+.absolute {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+}
+
+.fixed {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+}
+
+Flexbox: A layout model that allows elements to align and distribute space within a container.
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item {
+    flex: 1;
+}
+
+Grid: A layout system for creating complex web layouts.
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.item {
+    background-color: lightblue;
+}
+
+
+7. CSS Styling
+Colors: You can specify colors using names, HEX, RGB, or HSL values.
+.color-name {
+    color: red;
+}
+
+.color-hex {
+    color: #ff0000;
+}
+
+.color-rgb {
+    color: rgb(255, 0, 0);
+}
+
+.color-hsl {
+    color: hsl(0, 100%, 50%);
+}
+
+Background: You can set background color, image, position, and more.
+.background-color {
+    background-color: lightblue;
+}
+
+.background-image {
+    background-image: url('image.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+Borders: You can style borders using width, style, and color.
+.border {
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+Text: You can style text using various properties.
+.text {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+Shadows: You can add shadows to text and elements.
+.text-shadow {
+    text-shadow: 2px 2px 5px gray;
+}
+
+.box-shadow {
+    box-shadow: 5px 5px 10px gray;
+}
+
+Example Project
+Here’s an example of a complete HTML document with CSS styling:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .box {
+            background-color: white;
+            padding: 20px;
+            margin: 10px;
+            flex: 1;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Styled Page</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="box">
+                <h2>Box 1</h2>
+                <p>This is the content of box 1.</p>
+            </div>
+            <div class="box">
+                <h2>Box 2</h2>
+                <p>This is the content of box 2.</p>
+            </div>
+            <div class="box">
+                <h2>Box 3</h2>
+                <p>This is the content of box 3.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My Styled Page</p>
+    </footer>
+</body>
+</html>
+
+
+
